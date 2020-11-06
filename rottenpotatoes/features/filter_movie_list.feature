@@ -48,3 +48,6 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 
 Scenario: all ratings selected
   # see assignment
+  When I check the following ratings: ratings_G, ratings_PG, ratings_PG-13, ratings_R
+  And I press "Refresh"
+  Then I should see all the movies

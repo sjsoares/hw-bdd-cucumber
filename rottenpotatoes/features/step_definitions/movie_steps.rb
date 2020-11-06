@@ -44,5 +44,9 @@ end
 
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
-  fail "Unimplemented"
+  # value = total num rows in tbl
+  # expect(rows).toeq value
+  value = page.all('table#movies tr').count.should == Movie.count + 1
+  #expect(Movie.count).toeq value
+  #fail "Unimplemented"
 end
